@@ -3,6 +3,7 @@
 
     1. Web Fonts
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     2. General Styles
     3. Header
     4. Main Hero Image
@@ -13,6 +14,8 @@
     9. Page Specific: Packages
     10. Page Specific: Book Now / Reservations
 =======
+=======
+>>>>>>> Stashed changes
     2. General Styles & Animations
     3. Header (Luxury "Center-Out" Nav)
     4. Main Hero Image (Fade In + ::after Jewel)
@@ -22,6 +25,9 @@
     8. Page Specific: Rooms (Concierge List, Photo Stack, ::after Sheen)
     9. Page Specific: Packages (Spotlight Cards, ::after Corner Fold)
     10. Page Specific: Book Now (Heartbeat Button, ::after Signature Line)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     11. Page Specific: Header Cards
 */
@@ -167,6 +173,9 @@ body {
  }
 
  /* Luxury Navigation Styling */
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
  #main-nav li a {
      display: block;
@@ -206,6 +215,9 @@ body {
 
  #main-nav li a:hover::after {
     transform: scaleX(1);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
  }
  
@@ -218,10 +230,13 @@ body {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
  #main-nav input:checked ~ #burger-con {
     display: block;
  }
 =======
+=======
+>>>>>>> Stashed changes
 #main-nav input:checked ~ #burger-con {
     max-height: 500px;
     opacity: 1;
@@ -253,6 +268,10 @@ body {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+/* Entrance Animation */
+>>>>>>> Stashed changes
 =======
 /* Entrance Animation */
 >>>>>>> Stashed changes
@@ -292,6 +311,10 @@ body {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+/* Entrance Animation */
+>>>>>>> Stashed changes
 =======
 /* Entrance Animation */
 >>>>>>> Stashed changes
@@ -328,6 +351,10 @@ body {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+/* Line Expansion Animation */
+>>>>>>> Stashed changes
 =======
 /* Line Expansion Animation */
 >>>>>>> Stashed changes
@@ -339,12 +366,28 @@ body {
     margin-left: 20px; 
     margin-top: -15px;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     position: relative; /* Setup for ::after */
     overflow: visible;
 
     animation: expandLine 1.5s ease-in-out forwards;
 >>>>>>> Stashed changes
+}
+
+/* ::after ADDITION: The "Jewel" Divider */
+.main-header-red-line::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -3px; /* Centers vertically on the 6px line */
+    width: 12px;
+    height: 12px;
+    background: #9a2018;
+    transform: translateX(-50%) rotate(45deg); /* Creates a diamond */
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
 
 /* ::after ADDITION: The "Jewel" Divider */
@@ -744,6 +787,10 @@ h3:hover::after {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+/* Tactile Button Effects */
+>>>>>>> Stashed changes
 =======
 /* Tactile Button Effects */
 >>>>>>> Stashed changes
@@ -762,12 +809,15 @@ h3:hover::after {
     font-family: 'ceragr-mediumuploaded_file', sans-serif;
     line-height: 1.4;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     transition: background 0.3s;
 }
 
 .pkg-nav-btn:hover {
     background-color: #ccc;
 =======
+=======
+>>>>>>> Stashed changes
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -872,6 +922,10 @@ h3:hover::after {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+/* Focus Glow */
+>>>>>>> Stashed changes
 =======
 /* Focus Glow */
 >>>>>>> Stashed changes
@@ -886,7 +940,10 @@ h3:hover::after {
     height: 40px;
     color: #333;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     transition: background-color 0.3s, border-left 0.3s;
     border-left: 0px solid transparent;
 }
@@ -911,6 +968,10 @@ select.res-input {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+/* The "Heartbeat" Button */
+>>>>>>> Stashed changes
 =======
 /* The "Heartbeat" Button */
 >>>>>>> Stashed changes
@@ -927,17 +988,28 @@ select.res-input {
     text-align: left;
     padding-left: 20px;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     transition: background-color 0.3s, padding-left 0.3s;
     
     /* Animation: Infinite subtle pulse */
     animation: pulse-subtle 4s infinite ease-in-out;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
 
 .res-btn:hover {
     background-color: #7a1913;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    padding-left: 30px; /* Slide text */
+    animation: none; /* Stop pulse on hover to keep it stable */
+>>>>>>> Stashed changes
 =======
     padding-left: 30px; /* Slide text */
     animation: none; /* Stop pulse on hover to keep it stable */
@@ -1021,6 +1093,10 @@ select.res-input {
 /* 11. --- Page Specific: Header Cards --- */
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+/* Image Zoom on Hover */
+>>>>>>> Stashed changes
 =======
 /* Image Zoom on Hover */
 >>>>>>> Stashed changes
@@ -1050,13 +1126,36 @@ select.res-input {
     animation: sheen 1s ease-in-out; 
 }
 
+/* ::after ADDITION: The "Gloss" Sheen Effect */
+.card-header-block::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    /* Creates a diagonal beam of light */
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none; /* Let clicks pass through */
+    z-index: 10;
+}
+
+.card-header-block:hover::after {
+    /* Triggers the sheen animation defined at top of file */
+    animation: sheen 1s ease-in-out; 
+}
+
 .card-header-block img {
     width: 120%;
     height: auto;
     display: block;
     margin-left: -20px;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     transition: transform 0.8s ease;
     transform-origin: center center;
 }
