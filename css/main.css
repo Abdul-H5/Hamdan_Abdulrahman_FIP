@@ -2,6 +2,7 @@
     CSS Guide
 
     1. Web Fonts
+<<<<<<< Updated upstream
     2. General Styles
     3. Header
     4. Main Hero Image
@@ -11,6 +12,17 @@
     8. Page Specific: Rooms
     9. Page Specific: Packages
     10. Page Specific: Book Now / Reservations
+=======
+    2. General Styles & Animations
+    3. Header (Luxury "Center-Out" Nav)
+    4. Main Hero Image (Fade In + ::after Jewel)
+    5. Home Page Sections
+    6. Footer (::after Sliding Arrows)
+    7. Page Specific: Utilities (::after Underlines)
+    8. Page Specific: Rooms (Concierge List, Photo Stack, ::after Sheen)
+    9. Page Specific: Packages (Spotlight Cards, ::after Corner Fold)
+    10. Page Specific: Book Now (Heartbeat Button, ::after Signature Line)
+>>>>>>> Stashed changes
     11. Page Specific: Header Cards
 */
 
@@ -32,7 +44,45 @@
     font-style: normal;
 }
 
+<<<<<<< Updated upstream
 /* 2. ---General Styles--- */
+=======
+/* 2. ---General Styles & Animations--- */
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandLine {
+    from { width: 0; }
+    to { width: 90%; }
+}
+
+@keyframes pulse-subtle {
+    0% { transform: scale(1); box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
+    50% { transform: scale(1.02); box-shadow: 2px 5px 10px rgba(154, 32, 24, 0.3); }
+    100% { transform: scale(1); box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
+}
+
+/* Sheen Animation for Images */
+@keyframes sheen {
+    0% { left: -100%; opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { left: 200%; opacity: 0; }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+>>>>>>> Stashed changes
 
 #mobile-outline {
    outline: 20px solid #333;
@@ -109,11 +159,54 @@ body {
     margin: 0 0 10px 0;
  }
  
+<<<<<<< Updated upstream
+=======
+ #main-nav li {
+     border-bottom: 1px solid #efefef;
+     text-align: center; 
+ }
+
+ /* Luxury Navigation Styling */
+>>>>>>> Stashed changes
  #main-nav li a {
      display: block;
      padding: 10px 0 10px 0;
      text-align: center;
      color: #626262;
+<<<<<<< Updated upstream
+=======
+     position: relative;
+     
+     /* Luxury Typography */
+     text-transform: uppercase;
+     font-size: 13px;
+     font-weight: 600;
+     letter-spacing: 2px;
+     transition: color 0.3s ease, letter-spacing 0.3s ease;
+ }
+
+ /* "Center-Out" Elegant Underline */
+ #main-nav li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #9a2018; /* Brand Red */
+    bottom: 10px; 
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+ }
+
+ #main-nav li a:hover {
+    color: #9a2018;
+    letter-spacing: 3px; /* Subtle text expansion */
+ }
+
+ #main-nav li a:hover::after {
+    transform: scaleX(1);
+>>>>>>> Stashed changes
  }
  
  #main-nav li {
@@ -124,9 +217,17 @@ body {
     display: none;
 }
 
+<<<<<<< Updated upstream
  #main-nav input:checked ~ #burger-con {
     display: block;
  }
+=======
+#main-nav input:checked ~ #burger-con {
+    max-height: 500px;
+    opacity: 1;
+    margin-bottom: 20px;
+}
+>>>>>>> Stashed changes
 
  #main-nav input:checked ~ label img{
     transform: rotate(90deg);
@@ -151,6 +252,10 @@ body {
     display: block;
 }
 
+<<<<<<< Updated upstream
+=======
+/* Entrance Animation */
+>>>>>>> Stashed changes
 #book-now-top {
     grid-column: 3 / -1; 
     grid-row: 1;
@@ -174,12 +279,22 @@ body {
     margin-right: 20px;
     z-index: 10;
     transition: background-color 0.5s ease;
+<<<<<<< Updated upstream
+=======
+
+    opacity: 0; 
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+>>>>>>> Stashed changes
 }
 
 #book-now-top:hover {
     background-color: #7a1913;
 }
 
+<<<<<<< Updated upstream
+=======
+/* Entrance Animation */
+>>>>>>> Stashed changes
 .hero-img-h2 {
     grid-column: 1 / -1; 
     grid-row: 1;
@@ -196,6 +311,11 @@ body {
     line-height: 1.2;
     z-index: 10;
     position: relative;
+<<<<<<< Updated upstream
+=======
+
+    animation: fadeInUp 1s ease-out forwards;
+>>>>>>> Stashed changes
 }
 
 .hero-img-h2 span {
@@ -207,6 +327,10 @@ body {
     font-family: 'Sanchez', serif;
 }
 
+<<<<<<< Updated upstream
+=======
+/* Line Expansion Animation */
+>>>>>>> Stashed changes
 .main-header-red-line {
     background-color: #cf6666;
     height: 6px;
@@ -214,6 +338,26 @@ body {
     margin: 0 auto 30px auto; 
     margin-left: 20px; 
     margin-top: -15px;
+<<<<<<< Updated upstream
+=======
+    position: relative; /* Setup for ::after */
+    overflow: visible;
+
+    animation: expandLine 1.5s ease-in-out forwards;
+>>>>>>> Stashed changes
+}
+
+/* ::after ADDITION: The "Jewel" Divider */
+.main-header-red-line::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -3px; /* Centers vertically on the 6px line */
+    width: 12px;
+    height: 12px;
+    background: #9a2018;
+    transform: translateX(-50%) rotate(45deg); /* Creates a diamond */
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
 
 
@@ -460,6 +604,27 @@ body {
     font-family: 'ceragr-regularuploaded_file', arial, sans-serif;
  }
 
+ /* ::after ADDITION: Sliding Arrow on Footer Links */
+ #main-footer a {
+    position: relative;
+    display: inline-block;
+ }
+
+ #main-footer a::after {
+    content: '→';
+    position: absolute;
+    right: -15px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: #cf6666;
+    font-weight: bold;
+ }
+
+ #main-footer a:hover::after {
+    opacity: 1;
+    right: -25px; /* Slides out to the right */
+ }
+
  #main-footer-contact-info p {
     line-height: 22px;
  }
@@ -493,11 +658,29 @@ body {
     color: #333;
 }
 
+/* ::after ADDITION: Elegant Title Underlines */
 h3 {
     font-size: 16px;
     color: #333;
     font-weight: bold;
     margin-bottom: 15px;
+    position: relative;
+    display: inline-block; /* Wraps underline to text width */
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 30px; /* Small initial decorative line */
+    height: 2px;
+    background-color: #9a2018;
+    transition: width 0.3s ease;
+}
+
+h3:hover::after {
+    width: 100%; /* Grows on hover */
 }
 
 .body-image {
@@ -510,6 +693,7 @@ h3 {
 
 /* 8. --- Page Specific: Rooms --- */
 
+/* The "Concierge" List Effect */
 .room-features-list {
     list-style-type: disc;
     margin-left: 20px;
@@ -518,6 +702,27 @@ h3 {
 
 .room-features-list li {
     margin-bottom: 5px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: default;
+}
+
+.room-features-list li:hover {
+    transform: translateX(5px); /* Gentle slide right */
+    color: #9a2018; /* Highlights text */
+}
+
+/* The "Photo Stack" Fan-Out */
+.room-image-stack img {
+    transition: transform 0.5s ease;
+}
+
+.room-image-stack img:nth-child(even) { transform: rotate(1deg); }
+.room-image-stack img:nth-child(odd) { transform: rotate(-1deg); }
+
+.room-image-stack img:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 5; 
 }
 
 .room-desc-title {
@@ -538,6 +743,10 @@ h3 {
     margin: 30px 0;
 }
 
+<<<<<<< Updated upstream
+=======
+/* Tactile Button Effects */
+>>>>>>> Stashed changes
 .pkg-nav-btn {
     background-color: #e6e6e6; 
     color: #333;
@@ -552,11 +761,27 @@ h3 {
     justify-content: center;
     font-family: 'ceragr-mediumuploaded_file', sans-serif;
     line-height: 1.4;
+<<<<<<< Updated upstream
     transition: background 0.3s;
 }
 
 .pkg-nav-btn:hover {
     background-color: #ccc;
+=======
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.pkg-nav-btn:hover {
+    background-color: #dcdcdc;
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2); 
+}
+
+.pkg-nav-btn:active {
+    transform: translateY(0); 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+>>>>>>> Stashed changes
 }
 
 .pkg-nav-arrow {
@@ -573,8 +798,39 @@ h3 {
     line-height: 1.3;
 }
 
+/* ::after ADDITION: The "Corner Fold" Effect */
 .pkg-deal-block {
     margin-bottom: 30px;
+    padding: 15px;
+    transition: all 0.4s ease;
+    border-left: 3px solid transparent; 
+    position: relative; /* Needed for absolute positioning of ::after */
+}
+
+/* Create the Triangle */
+.pkg-deal-block::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 40px 40px 0; /* Creates triangle shape */
+    border-color: transparent #9a2018 transparent transparent;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+.pkg-deal-block:hover {
+    background-color: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); 
+    border-left: 3px solid #9a2018; 
+    transform: translateY(-5px);
+}
+
+.pkg-deal-block:hover::after {
+    opacity: 1; /* Reveals the corner triangle */
 }
 
 .pkg-title {
@@ -615,6 +871,10 @@ h3 {
     padding-left: 10px;
 }
 
+<<<<<<< Updated upstream
+=======
+/* Focus Glow */
+>>>>>>> Stashed changes
 .res-input {
     width: 65%;
     padding: 10px;
@@ -625,6 +885,18 @@ h3 {
     font-size: 14px;
     height: 40px;
     color: #333;
+<<<<<<< Updated upstream
+=======
+    transition: background-color 0.3s, border-left 0.3s;
+    border-left: 0px solid transparent;
+}
+
+.res-input:focus {
+    outline: none;
+    background-color: #fff;
+    border-left: 5px solid #9a2018; 
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+>>>>>>> Stashed changes
 }
 
 select.res-input {
@@ -638,6 +910,10 @@ select.res-input {
     padding-right: 30px;
 }
 
+<<<<<<< Updated upstream
+=======
+/* The "Heartbeat" Button */
+>>>>>>> Stashed changes
 .res-btn {
     background-color: #9a2018; 
     color: #fff;
@@ -650,18 +926,47 @@ select.res-input {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     text-align: left;
     padding-left: 20px;
+<<<<<<< Updated upstream
+=======
+    transition: background-color 0.3s, padding-left 0.3s;
+    
+    /* Animation: Infinite subtle pulse */
+    animation: pulse-subtle 4s infinite ease-in-out;
+>>>>>>> Stashed changes
 }
 
 .res-btn:hover {
     background-color: #7a1913;
+<<<<<<< Updated upstream
+=======
+    padding-left: 30px; /* Slide text */
+    animation: none; /* Stop pulse on hover to keep it stable */
+>>>>>>> Stashed changes
 }
 
+/* ::after ADDITION: The "Signature" Underline */
 .secure-server-text {
     background-color: #f4f4f4;
     padding: 20px;
     margin-bottom: 30px;
     text-align: center;
     font-size: 14px;
+    position: relative;
+}
+
+.secure-server-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 4px; /* Thick underline accent */
+    background-color: #9a2018;
+    transition: width 0.5s ease;
+}
+
+.secure-server-text:hover::after {
+    width: 100%; /* Sweeps across bottom on hover */
 }
 
 .secure-server-text h3 {
@@ -715,10 +1020,34 @@ select.res-input {
 
 /* 11. --- Page Specific: Header Cards --- */
 
+<<<<<<< Updated upstream
+=======
+/* Image Zoom on Hover */
+>>>>>>> Stashed changes
 .card-header-block {
     position: relative;
     margin-bottom: 30px;
     margin-top: 20px;
+}
+
+/* ::after ADDITION: The "Gloss" Sheen Effect */
+.card-header-block::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    /* Creates a diagonal beam of light */
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none; /* Let clicks pass through */
+    z-index: 10;
+}
+
+.card-header-block:hover::after {
+    /* Triggers the sheen animation defined at top of file */
+    animation: sheen 1s ease-in-out; 
 }
 
 .card-header-block img {
@@ -726,6 +1055,15 @@ select.res-input {
     height: auto;
     display: block;
     margin-left: -20px;
+<<<<<<< Updated upstream
+=======
+    transition: transform 0.8s ease;
+    transform-origin: center center;
+}
+
+.card-header-block:hover img {
+    transform: scale(1.05); /* Slight zoom in */
+>>>>>>> Stashed changes
 }
 
 .card-floating-box {
