@@ -8,7 +8,8 @@
     <script src="https://kit.fontawesome.com/d0e8431583.js" crossorigin="anonymous"></script>
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <title>Packages - Couples Resort</title>
+    <link rel="icon" type="image/svg" href="images/couples_resort_logo-cropped.svg">
+    <title>CR - Packagespage</title>
 </head>
 <body>
     <h1 class="hidden">Couples Resort Packages</h1>
@@ -35,16 +36,17 @@
         </header>
     
         <main>
-            <section id="main-hero" class="grid-full">
-                <img src="images/hero-main.jpg" alt="Couple Walking" class="col-span-full hero-overlap">
-                <div class="grid-con col-span-full hero-overlap">
-                    <a class="book-now col-start-3 col-end-5" href="booknow.html">Book Now</a>
-                    <h2 class="hero-img-h2"><span>Couples Resort</span><br> Packages</h2> 
-                </div>   
-            </section> 
+            <!-- UPDATED MAIN HERO TO MATCH SCREENSHOT -->
+            <section id="main-hero" class="col-span-full">
+                <img src="images/cr-package-header.jpg" alt="Couple Walking">
+                <a id="book-now-top" href="booknow.html">Book Now</a>
+                <h2 class="hero-img-h2"><span>Couples Resort</span>Packages</h2> 
+            </section>
+            <div class="main-header-red-line"></div> 
 
             <!-- Sub Nav Buttons -->
             <section class="grid-con">
+                <h2 class="hidden">Package Navigation</h2>
                 <div class="col-span-full pkg-nav-container">
                     <a href="#brides" class="pkg-nav-btn">
                         BRIDES
@@ -60,8 +62,14 @@
             <!-- Brides Section -->
             <section id="brides" class="grid-con">
                 <div class="col-span-full">
-                    <img src="images/why-hero.jpg" alt="Wedding Arch" style="margin-bottom: 20px; width:100%;">
-                    <h2 class="hero-img-h2" style="position:relative; margin-bottom: 20px;"><span>Couples Resort</span><br> Brides</h2>
+                    <div class="card-header-block">
+                        <img src="images/cr-bride-1.jpg" alt="Wedding Arch">
+                        <div class="card-floating-box">
+                            <span class="card-subtitle">Couples Resort</span>
+                            <h2 class="card-main-title">Brides</h2>
+                        </div>
+                        <div class="card-red-bar"></div>
+                    </div>
 
                     <h3 style="text-transform: uppercase;">WELCOME TO YOUR LUXURY<br>HONEYMOON RESORT</h3>
                     <p>We are very environmentally friendly with the wilderness, Algonquin Park, and at the edge of a village.</p>
@@ -70,13 +78,11 @@
                 </div>
             </section>
 
-            <!-- Red Line -->
-            <div class="grid-con">
-                <div class="col-span-full section-divider"></div>
-            </div>
+            
 
             <!-- Honeymoon Deals -->
             <section class="grid-con">
+                <h2 class="hidden">Honeymoon Deals</h2>
                 <div class="col-span-full">
                     <p class="pkg-header-large">Special Ontario<br>Honeymoon Deals<br>1 Night Free + $743 in<br>Gifts</p>
                     
@@ -88,7 +94,7 @@
                             <li>2 Free Hot Stone 1-hour massages — Value $312</li>
                             <li>2 Free Ultra Luxurious Embossed Bath Robes — Value $292</li>
                         </ul>
-                        <img src="images/couple-in-hottub.jpg" alt="Couple dining" style="margin-bottom: 10px; width:100%;">
+                        <img class="body-image" src="images/cr-bride-2.jpg" alt="Couple dining">
                     </div>
 
                     <div class="pkg-deal-block">
@@ -98,6 +104,7 @@
                             <li>3 Free Lunches as Room Service (no alcohol) — Value $139</li>
                             <li>2 Free Hot Stone 1-hour massages — Value $312</li>
                         </ul>
+                        <img class="body-image" src="images/cr-bride-3.jpg" alt="Couple taking a massage">
                     </div>
 
                     <div class="pkg-deal-block">
@@ -107,7 +114,7 @@
                             <li>3 Free Lunches as Room Service (no alcohol) — Value $139</li>
                             <li>2 Free Hot Stone 1-hour massages — Value $312</li>
                         </ul>
-                        <img src="images/why-hero.jpg" alt="Couple close up" style="margin-bottom: 10px; width:100%;">
+                        <img class="body-image" src="images/cr-bride-4.jpg" alt="Couple in a hot tub">
                     </div>
 
                     <p><strong>Restrictions:</strong></p>
@@ -120,13 +127,10 @@
                 </div>
             </section>
 
-            <!-- Red Line -->
-            <div class="grid-con">
-                <div class="col-span-full section-divider"></div>
-            </div>
 
             <!-- Weddings -->
             <section class="grid-con">
+                <h2 class="hidden">Wedding Packages</h2>
                 <div class="col-span-full">
                     <p class="pkg-header-large" style="text-transform: uppercase;">INTIMATE<br>WEDDINGS</p>
                     
@@ -140,7 +144,7 @@
                             <li>No cash value, no rain checks</li>
                         </ul>
                         <p><strong>(No children attend weddings)</strong></p>
-                        <img src="images/why-hero.jpg" alt="Wedding night" style="margin-bottom: 10px; width:100%;">
+                        <img class="body-image" src="images/cr-bride-5.jpg" alt="Wedding night">
                     </div>
 
                     <p><strong>Professional Services Available (Extra Cost):</strong></p>
@@ -150,21 +154,25 @@
                         <li>Wedding Officiants: Huntsville</li>
                         <li>Wedding Officiants: Bancroft</li>
                     </ul>
-                    <img src="images/about-hero.jpg" alt="Wedding table" style="margin-bottom: 10px; width:100%;">
+                    <img class="body-image" src="images/cr-bride-6.jpg" alt="Wedding table">
                 </div>
             </section>
 
-            <!-- Red Line -->
-            <div class="grid-con">
-                <div class="col-span-full section-divider"></div>
-            </div>
 
-            <!-- Musicians & Planes -->
+            <!-- Musicians & Planes with Card Header -->
             <section id="musicians" class="grid-con">
                 <div class="col-span-full">
-                    <h2 class="hero-img-h2" style="position:relative; margin-bottom: 20px;"><span>Couples Resort</span><br> Musicians & Planes</h2>
+                    <div class="card-header-block">
+                        <img src="images/cr-musician-1.jpg" alt="Piano Hands">
+                        <div class="card-floating-box">
+                            <span class="card-subtitle">Couples Resort</span>
+                            <h2 class="card-main-title">Musicians & Planes</h2>
+                        </div>
+                        <div class="card-red-bar"></div>
+                    </div>
                     
-                    <h3 style="text-transform: uppercase;">MUSICIANS</h3>
+                    <h2 style="text-transform: uppercase;">MUSICIANS</h2>
+                    <br>
                     <p>Do you have a skill that a 5-Star Resort such as ours could benefit from? We might have something to barter. There is a saying: "it never hurts to ask (politely)". Please email us at info@couplesresort.ca and we will see if we can fit you in somehow. Who knows, maybe you or your spouse might think the idea is fun — and hopefully it will all be win-win-win!</p>
                     
                     <p><strong>Couples Resort is looking for superb musicians.</strong></p>
@@ -177,21 +185,23 @@
                     <p>We have a stand-up piano; strings and wind instruments must be your own.</p>
                     <p>Pre-booking dates can be arranged, but confirmed bookings will only be finalized within 7 days of your play date (depending on availability).</p>
                     
-                    <img src="images/why-hero.jpg" alt="Guitar" style="margin-bottom: 20px; width:100%;">
+                    <img class="body-image" src="images/cr-musician-2.jpg" alt="Guitar">
+                    <img class="body-image" src="images/cr-musician-3.jpg" alt="Saxophone">
                 </div>
             </section>
             
             <section class="grid-con">
                 <div class="col-span-full">
-                    <h3 style="text-transform: uppercase;">FLY-IN &amp; FLOAT PLANE<br>FRIENDLY</h3>
+                    <h2 style="text-transform: uppercase;">FLY-IN &amp; FLOAT PLANE<br>FRIENDLY</h2>
+                    <br>
                     <p>We welcome guests arriving by float plane:</p>
                     <ul>
                         <li>Reserve the day you arrive, or the day before.</li>
                         <li>We will help you dock safely.</li>
                         <li>Availability is limited due to our small resort size.</li>
                     </ul>
-                    <img src="images/about-hero.jpg" alt="Float plane" style="margin-bottom: 10px; width:100%;">
-                    <img src="images/about-hero.jpg" alt="Float plane takeoff" style="margin-bottom: 10px; width:100%;">
+                    <img class="body-image" src="images/cr-plane-1.jpg" alt="Float plane">
+                    <img class="body-image" src="images/cr-plane-2.jpg" alt="Float plane takeoff">
                 </div>
             </section>
 
@@ -209,6 +219,8 @@
                 <p>
                     Toll Free:<a href="tel:1-877-201-1156" style="color:white; text-decoration:underline;">+1 877 201-1156</a><br>
                     FAX:+1 613 638 2217
+                    <br>
+                    E-mail: info@coupleresort.com
                 </p>
             </div>
             <p id="price-policy" class="col-span-full">All prices and services on this website and in our reservation system are based on conditions at the time of publishing and are subject to change. Please call to confirm services, availability and pricing. ©2013 Couples Resort Inc. All Rights Reserved. Privacy Policy </p>
