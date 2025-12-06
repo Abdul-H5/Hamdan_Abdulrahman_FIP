@@ -1,4 +1,4 @@
-# Hamdan_Abdulrahman_FIP
+# Couples Resort FIP Project
 This GitHub repo is for a web project called FIP which stands for Final Integrated Project.
 
 In This project, I will be redesigning a website called Couples Resort with a homepage, three mobile pages, and one desktop page. 
