@@ -2,16 +2,16 @@
     CSS Guide
 
     1. Web Fonts
-    2. General Styles
-    3. Header
-    4. Main Hero Image
+    2. General Styles & Animations
+    3. Header (Updated with "Center-Out" Luxury Hover)
+    4. Main Hero Image (Updated with Fade In)
     5. Home Page Sections (Why, About, FAQ, Contact)
     6. Footer
     7. Page Specific: Utilities (Dividers, etc.)
     8. Page Specific: Rooms
-    9. Page Specific: Packages
-    10. Page Specific: Book Now / Reservations
-    11. Page Specific: Header Cards
+    9. Page Specific: Packages (Updated with Tactile Buttons)
+    10. Page Specific: Book Now / Reservations (Updated with Focus Glow)
+    11. Page Specific: Header Cards (Updated with Image Zoom)
 */
 
 /* 1. --- Web Fonts --- */
@@ -32,7 +32,28 @@
     font-style: normal;
 }
 
-/* 2. ---General Styles--- */
+/* 2. ---General Styles & Animations--- */
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandLine {
+    from { width: 0; }
+    to { width: 90%; }
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 #mobile-outline {
    outline: 20px solid #333;
@@ -109,24 +130,77 @@ body {
     margin: 0 0 10px 0;
  }
  
- #main-nav li a {
-     display: block;
-     padding: 10px 0 10px 0;
-     text-align: center;
-     color: #626262;
- }
- 
  #main-nav li {
      border-bottom: 1px solid #efefef;
+     text-align: center; 
  }
 
-#burger-con, #main-nav input {
+ /* UPDATED: Luxury Navigation Styling */
+ #main-nav li a {
+     display: inline-block;
+     padding: 15px 5px;
+     color: #626262;
+     position: relative;
+     
+     /* Luxury Typography */
+     text-transform: uppercase;
+     font-size: 13px;
+     font-weight: 600;
+     
+     /* "Breathing" Text Effect */
+     letter-spacing: 2px;
+     transition: color 0.3s ease, letter-spacing 0.3s ease;
+ }
+
+ /* UPDATED: The "Center-Out" Underline */
+ #main-nav li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #9a2018; /* Brand Red */
+    
+    /* Position at bottom of text */
+    bottom: 10px; 
+    left: 0;
+    
+    /* Start hidden at center */
+    transform: scaleX(0);
+    transform-origin: center; /* Grows from the middle out */
+    
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Elegant motion */
+ }
+
+ /* Hover States */
+ #main-nav li a:hover {
+    color: #9a2018;
+    letter-spacing: 3px; /* Subtle text expansion */
+ }
+
+ #main-nav li a:hover::after {
+    transform: scaleX(1); /* Smoothly expands to full width */
+ }
+ 
+/* Smooth Mobile Menu Animation */
+#burger-con {
+    display: block; 
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    margin: 0;
+}
+
+#main-nav input {
     display: none;
 }
 
- #main-nav input:checked ~ #burger-con {
-    display: block;
- }
+/* Logic for opening the menu */
+#main-nav input:checked ~ #burger-con {
+    max-height: 500px;
+    opacity: 1;
+    margin-bottom: 20px;
+}
 
  #main-nav input:checked ~ label img{
     transform: rotate(90deg);
@@ -151,6 +225,7 @@ body {
     display: block;
 }
 
+/* Added Entrance Animation */
 #book-now-top {
     grid-column: 3 / -1; 
     grid-row: 1;
@@ -174,12 +249,17 @@ body {
     margin-right: 20px;
     z-index: 10;
     transition: background-color 0.5s ease;
+
+    /* Animation */
+    opacity: 0; 
+    animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 
 #book-now-top:hover {
     background-color: #7a1913;
 }
 
+/* Added Entrance Animation */
 .hero-img-h2 {
     grid-column: 1 / -1; 
     grid-row: 1;
@@ -196,6 +276,9 @@ body {
     line-height: 1.2;
     z-index: 10;
     position: relative;
+
+    /* Animation */
+    animation: fadeInUp 1s ease-out forwards;
 }
 
 .hero-img-h2 span {
@@ -207,6 +290,7 @@ body {
     font-family: 'Sanchez', serif;
 }
 
+/* Added Line Expansion Animation */
 .main-header-red-line {
     background-color: #cf6666;
     height: 6px;
@@ -214,6 +298,9 @@ body {
     margin: 0 auto 30px auto; 
     margin-left: 20px; 
     margin-top: -15px;
+
+    /* Animation */
+    animation: expandLine 1.5s ease-in-out forwards;
 }
 
 
@@ -289,7 +376,6 @@ body {
     font-size: 12px;
 }
 
-/* UPDATED: Force square size for this specific image to fix float */
 .why-us-img img {
     float: left;
     margin-right: 10px;
@@ -538,6 +624,7 @@ h3 {
     margin: 30px 0;
 }
 
+/* Added Tactile Button Effects */
 .pkg-nav-btn {
     background-color: #e6e6e6; 
     color: #333;
@@ -552,11 +639,21 @@ h3 {
     justify-content: center;
     font-family: 'ceragr-mediumuploaded_file', sans-serif;
     line-height: 1.4;
-    transition: background 0.3s;
+    
+    /* Animation Properties */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .pkg-nav-btn:hover {
-    background-color: #ccc;
+    background-color: #dcdcdc;
+    transform: translateY(-5px); /* Moves up */
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2); /* Shadow grows */
+}
+
+.pkg-nav-btn:active {
+    transform: translateY(0); /* Pushes down when clicked */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .pkg-nav-arrow {
@@ -615,6 +712,7 @@ h3 {
     padding-left: 10px;
 }
 
+/* Added Focus Glow */
 .res-input {
     width: 65%;
     padding: 10px;
@@ -625,6 +723,17 @@ h3 {
     font-size: 14px;
     height: 40px;
     color: #333;
+    
+    /* Animation Properties */
+    transition: background-color 0.3s, border-left 0.3s;
+    border-left: 0px solid transparent;
+}
+
+.res-input:focus {
+    outline: none;
+    background-color: #fff;
+    border-left: 5px solid #9a2018; /* Red accent bar */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
 }
 
 select.res-input {
@@ -638,6 +747,7 @@ select.res-input {
     padding-right: 30px;
 }
 
+/* Added Hover Slide */
 .res-btn {
     background-color: #9a2018; 
     color: #fff;
@@ -650,10 +760,14 @@ select.res-input {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     text-align: left;
     padding-left: 20px;
+    
+    /* Animation Properties */
+    transition: background-color 0.3s, padding-left 0.3s;
 }
 
 .res-btn:hover {
     background-color: #7a1913;
+    padding-left: 30px; /* Text slides right */
 }
 
 .secure-server-text {
@@ -715,10 +829,13 @@ select.res-input {
 
 /* 11. --- Page Specific: Header Cards --- */
 
+/* Added Image Zoom on Hover */
 .card-header-block {
     position: relative;
     margin-bottom: 30px;
     margin-top: 20px;
+    overflow: hidden; /* Contains the zoom */
+    cursor: pointer;
 }
 
 .card-header-block img {
@@ -726,6 +843,14 @@ select.res-input {
     height: auto;
     display: block;
     margin-left: -20px;
+    
+    /* Animation */
+    transition: transform 0.8s ease;
+    transform-origin: center center;
+}
+
+.card-header-block:hover img {
+    transform: scale(1.05); /* Slight zoom in */
 }
 
 .card-floating-box {
@@ -737,6 +862,11 @@ select.res-input {
     position: relative;
     z-index: 2;
     box-sizing: border-box;
+    transition: box-shadow 0.5s ease;
+}
+
+.card-header-block:hover .card-floating-box {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .card-subtitle {
