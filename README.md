@@ -3,7 +3,7 @@
 
 This repository contains the source code for the **Final Integrated Project (FIP)**. The objective of this project is to redesign and modernize the web presence of *Couples Resort*. The redesign focuses on creating a high-end, luxury aesthetic while ensuring a robust technical foundation using modern web standards.
 
-The project requires the development of a fully responsive Homepage, three specific mobile-optimized sub-pages, and one fully fleshed-out desktop layout.
+The project requires the development of a fully redesigned Homepage, three specific mobile pages, and one desktop page.
 
 ## 🎯 Key Objectives & Requirements
 
@@ -12,7 +12,6 @@ This project adheres to strict technical guidelines to ensure code quality and a
 *   **Layout Engine:** All layouts are constructed using **CSS Grid** (Static) to manage complex page structures across mobile and desktop viewports.
 *   **Validation:** All code (HTML5 and CSS3) is validated against W3C standards to ensure it is error-free.
 *   **Semantics:** A proper **Document Outline** is utilized (H1-H6 hierarchy) to ensure accessibility and SEO best practices.
-*   **Responsiveness:** The site features a "Mobile First" approach, adapting seamlessly to desktop screens via media queries.
 
 ## 📂 Site Architecture
 
