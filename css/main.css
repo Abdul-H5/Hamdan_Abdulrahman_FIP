@@ -11,7 +11,8 @@
     8. Page Specific: Rooms (Concierge List, Photo Stack, ::after Sheen)
     9. Page Specific: Packages (Spotlight Cards, ::after Corner Fold)
     10. Page Specific: Book Now (Heartbeat Button, ::after Signature Line)
-    11. Page Specific: Header Cards
+    11. Page Specific: Header Cards 
+    12. Desktop Page Specific (rooms-desktop.html)
 */
 
 /* 1. --- Web Fonts --- */
@@ -1032,4 +1033,88 @@ select.res-input {
     width: 85%;
     margin: 20px 0 0 20px; 
     margin-top: -1px;
+}
+
+/* 12. --- Desktop Page Specific (rooms-desktop.html) --- */
+
+/* Scoped by the desktop grid class to avoid affecting mobile pages */
+header.desk-grid-con {
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Reset the mobile nav styles for the desktop layout */
+header.desk-grid-con #main-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+    /* Override mobile max-height/opacity from burger menu */
+    max-height: none;
+    opacity: 1;
+}
+
+header.desk-grid-con #main-nav li {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Fix logo size in desktop header */
+header.desk-grid-con #logo img {
+    width: 100%;
+    max-width: 250px;
+}
+
+/* Logo Divider */
+header.desk-grid-con #logo {
+    position: relative;
+}
+
+header.desk-grid-con #logo::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 160%; 
+    width: 1px;
+    background-color: #626262; /* Dark Grey Divider */
+}
+
+/* Ensure images in desktop grid fill their columns */
+.desk-col-span-4 img, 
+.desk-col-span-6 img,
+.desk-col-span-12 img {
+    width: 100%;
+    height: auto;
+}
+
+/* Desktop Book Now Button styling */
+header.desk-grid-con #book-now-top {
+    /* Reset from hero absolute positioning */
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+    
+    /* Ensure it behaves like the button it is */
+    background-color: #9a2018;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Sanchez', serif;
+    opacity: 0; /* Hidden initially for animation */
+    
+    /* Restore the fadeInUp Animation */
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+header.desk-grid-con #book-now-top:hover {
+    background-color: #7a1913;
 }
